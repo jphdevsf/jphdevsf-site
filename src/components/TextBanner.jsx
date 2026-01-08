@@ -1,10 +1,14 @@
-import { storyblokEditable } from '@storyblok/react/rsc';
+import { storyblokEditable,
+	StoryblokServerComponent
+ } from '@storyblok/react/rsc';
 
 const TextBanner = ({ blok }) => {
 	return (
 		<div className="textbanner" {...storyblokEditable(blok)}>
-			<h1>{blok.texttitle}</h1>
-			<p>{blok.textbody}</p>
+			<p>{blok.align}</p>
+			{blok.textgroups?.map((nestedBlok) => (
+				<StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
+			))}
 		</div>
 	);
 };

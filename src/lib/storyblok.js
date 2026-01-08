@@ -1,8 +1,13 @@
 import Page from '@/components/Page';
-import Feature from '@/components/Feature';
-import Grid from '@/components/Grid';
-import Teaser from '@/components/Teaser';
 import TextBanner from '@/components/TextBanner';
+import Hero from '@/components/Hero';
+import TextGroup from '@/components/TextGroup';
+import Link from '@/components/Link';
+
+// import Feature from '@/components/Feature';
+// import Grid from '@/components/Grid';
+// import Teaser from '@/components/Teaser';
+
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
 
 export const getStoryblokApi = storyblokInit({
@@ -10,10 +15,13 @@ export const getStoryblokApi = storyblokInit({
 	use: [apiPlugin],
 	components: {
 		page: Page,
-		feature: Feature,
-		grid: Grid,
-		teaser: Teaser,
-		textbanner: TextBanner
+		// feature: Feature,
+		// grid: Grid,
+		// teaser: Teaser,
+		textbanner: TextBanner,
+		hero: Hero,
+		textgroup: TextGroup,
+		link: Link
 	},
 	apiOptions: {
 		/** Set the correct region for your space. Learn more: https://www.storyblok.com/docs/packages/storyblok-js#example-region-parameter */
