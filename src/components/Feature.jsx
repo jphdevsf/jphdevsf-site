@@ -1,11 +1,37 @@
-import { storyblokEditable } from '@storyblok/react/rsc';
+import { StoryblokServerComponent, storyblokEditable } from "@storyblok/react/rsc"
 
 const Feature = ({ blok }) => {
-	return (
-		<div className="feature" {...storyblokEditable(blok)}>
-			<span>{blok.name}</span>
-		</div>
-	);
-};
+  const { align } = blok
+  const flexAlignClass =
+    align === "left"
+      ? "items-start"
+      : align === "center"
+        ? "items-center"
+        : align === "right"
+          ? "items-end"
+          : "items-center"
+  return (
+    <div
+      className="feature bg-red-950 text-xs md:text-sm lg:text-md relative flex flex-column md:flex-row my-8"
+      {...storyblokEditable(blok)}
+    >
+      {blok.image?.filename && (
+        <img className="block w-1/2" src={blok.image.filename} alt={blok.image.alt || ""} />
+      )}
 
-export default Feature;
+      {blok.textgroups && blok.textgroups.length > 0 && (
+        <div
+          className={`text-groups-container relative white w-1/2 flex flex-col p-8 md:p-12 justify-center ${flexAlignClass}`}
+        >
+          <div className="relative block text-white">
+            {blok.textgroups.map(nestedBlok => (
+              <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+export default Feature

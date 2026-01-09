@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "npx @biomejs/biome lint"
   },
   "dependencies": {
     "@storyblok/react": "^5.4.20",
@@ -16,11 +16,12 @@
     "react-dom": "^19.2.1"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
+    "@babel/preset-react": "^7.28.5",
+    "@biomejs/biome": "2.3.11",
     "@netlify/plugin-nextjs": "^5.15.1",
     "@tailwindcss/postcss": "^4.1.18",
-    "eslint": "^9",
-    "eslint-config-next": "^16.1.1",
-    "tailwindcss": "^4.1.18"
+    "globals": "^17.0.0",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
   }
 }

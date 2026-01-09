@@ -1,11 +1,12 @@
-import { storyblokEditable } from '@storyblok/react/rsc';
+import { storyblokEditable } from "@storyblok/react/rsc"
 
 const Link = ({ blok }) => {
-	return (
-		<div className="link" {...storyblokEditable(blok)}>
-			<span>{blok.name}</span>
-		</div>
-	);
-};
+  return (
+    <div className="link" {...storyblokEditable(blok)}>
+      <span>{blok.title}</span>
+      <span>{blok.type}</span>
+    </div>
+  )
+}
 
-export default Link;
+export default Link

@@ -1,18 +1,17 @@
 @import "tailwindcss";
-/* @import 'https://a.storyblok.com/f/212319/x/e6ccda03b8/blueprint-blank.css'; */
 
 :root {
-  --color-primary: #6900BF;
-  --color-secondary: #FFE492;
-  --color-tertiary: #BF2F5F;
-  --color-quaternary: #C5B2DE;
+  --color-primary: #6900bf;
+  --color-secondary: #ffe492;
+  --color-tertiary: #bf2f5f;
+  --color-quaternary: #c5b2de;
 }
 
 @theme {
-  --color-primary: #6900BF;
-  --color-secondary: #FFE492;
-  --color-tertiary: #BF2F5F;
-  --color-quaternary: #C5B2DE;
+  --color-primary: #6900bf;
+  --color-secondary: #ffe492;
+  --color-tertiary: #bf2f5f;
+  --color-quaternary: #c5b2de;
 
   --font-leadin: var(--font-source_serif_4);
   --font-title: var(--font-brunson);
@@ -20,10 +19,11 @@
   --font-nav: var(--font-dm_mono);
 
   --container-7xl: 1440px;
-}
 
-body {
-  font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+  --text-leadin: 2em;
+  --text-title: 3em;
+  --text-body: 1.5em;
+  --text-link: 1em;
 }
 
 h1,
@@ -32,36 +32,5 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-title), system-ui, -apple-system, sans-serif;
-  font-weight: 700;
-}
-
-.content-freeform-text {
-  h1 {
-    font-size: 2.75rem;
-  }
-
-  h2 {
-    font-size: 1.75rem;
-  }
-
-  h3 {
-    font-size: 1.25rem;
-  }
-
-  p {
-    line-height: 2rem;
-  }
-
-  body ul {
-    list-style-type: disc;
-    list-style: disc;
-    margin: 1rem 2.5rem 0 1rem;
-    display: block;
-  }
-
-  li {
-    padding-left: 1rem;
-    line-height: 1.5rem;
-  }
+  font-weight: 600;
 }
