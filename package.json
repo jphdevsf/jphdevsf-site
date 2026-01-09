@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "npx @biomejs/biome lint"
+    "lint": "npx @biomejs/biome lint",
+    "format": "npx @biomejs/biome format --write"
   },
   "dependencies": {
+    "@netlify/edge-functions": "^3.0.3",
     "@storyblok/react": "^5.4.20",
     "next": "^16.1.1",
     "postcss": "^8.5.6",

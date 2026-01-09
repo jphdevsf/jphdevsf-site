@@ -1,0 +1,14 @@
+{"type":"entity","name":"jphdevsf-site","entityType":"Next.js Project","observations":["POC website demonstrating modern full-stack development using Next.js App Router with Storyblok headless CMS","Deployed to Netlify free-tier with edge functions","Live site: https://jphdevsf-portfolio-site.netlify.app/","Uses dynamic routing [[...slug]]","Root layout: src/app/layout.js","Global styles: src/app/globals.css","Components in src/components/: Card.jsx, Feature.jsx, Grid.jsx, Hero.jsx, Link.jsx, Page.jsx, StoryblokProvider.jsx, TextBanner.jsx, TextGroup.jsx","Storyblok config: src/lib/storyblok.js","Netlify edge functions: netlify/edge-functions/cache-demo.ts (1-hour TTL demo), cache-page.ts (/* page caching)","Configuration files: next.config.mjs, tailwind.config.js, postcss.config.mjs, biome.json, netlify.toml","npm scripts: dev, build, start, lint (Biome), format (Biome)","Env vars: STORYBLOK_DELIVERY_API_TOKEN, STORYBLOK_API_BASE_URL, STORYBLOK_REGION"]}
+{"type":"entity","name":"Next.js","entityType":"Framework","observations":["Version 16.1.1","React framework for full-stack web apps with SSR & SSG","App Router structure in src/app/","next.config.mjs exposes Storyblok env vars publicly"]}
+{"type":"entity","name":"Storyblok","entityType":"Headless CMS","observations":["Visual editor","Free tier available","Requires delivery API token in .env","Public token used for live preview","Remote images allowed: https://a.storyblok.com/**"]}
+{"type":"entity","name":"Netlify","entityType":"Hosting Platform","observations":["Serverless hosting with edge network","Automatic deployment on push to main GitHub branch","Edge functions configured in netlify.toml: /api/cache-demo -> cache-demo, /* -> cache-page","Plugin: @netlify/plugin-nextjs"]}
+{"type":"entity","name":"TailwindCSS","entityType":"CSS Framework","observations":["Version 4.1.18","Utility class framework","tailwind.config.js (noted as unused in V4 but present)","postcss.config.mjs"]}
+{"type":"entity","name":"Biome","entityType":"Tool","observations":["Fast linter and formatter for JS/TS","Version 2.3.11","biome.json config","Commands: npm run lint, npm run format"]}
+{"type":"entity","name":"React","entityType":"Library","observations":["Version 19.2.1"]}
+{"type":"relation","from":"jphdevsf-site","to":"Next.js","relationType":"uses"}
+{"type":"relation","from":"jphdevsf-site","to":"Storyblok","relationType":"uses"}
+{"type":"relation","from":"jphdevsf-site","to":"Netlify","relationType":"deployed on"}
+{"type":"relation","from":"jphdevsf-site","to":"TailwindCSS","relationType":"uses"}
+{"type":"relation","from":"jphdevsf-site","to":"Biome","relationType":"uses"}
+{"type":"relation","from":"jphdevsf-site","to":"React","relationType":"uses"}
+{"type":"relation","from":"jphdevsf-site","to":"Netlify","relationType":"configured with edge functions"}

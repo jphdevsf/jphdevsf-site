@@ -1,78 +1,129 @@
 
-# Storyblok Core Space Blueprint: Next.js
+# jphdevsf-site
 
-Integrate [Next.js](https://nextjs.org/) with [Storyblok](http://www.storyblok.com) as a headless CMS.
+Hi there! Here we have a quick POC website demonstrating modern full-stack development using Next.js with Storyblok headless CMS, all deployed to Netlify free-tier and tinkering with Netlify edge functions. [View the site here](https://jphdevsf-portfolio-site.netlify.app/).
 
-This blueprint is ideal for kickstarting new Storyblok and Next.js projects. What's inside:
-- Pre-configured default blocks: `page`, `teaser`, `grid`, and `feature`.
-- Support for the Visual Editor's live preview.
-- Dynamic routing to fetch and render new stories automatically.
-- Minimal styling.
+[![Next.js](https://img.shields.io/badge/Next.js-16.0-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.2-blue?style=for-the-badge&logo=react)](https://react.dev/)
+[![Storyblok](https://img.shields.io/badge/Storyblok-CMS-09b3af?style=for-the-badge&logo=storyblok)](https://www.storyblok.com/)
+[![Netlify](https://img.shields.io/badge/Netlify-Deploy-00C7B7?style=for-the-badge&logo=netlify)](https://www.netlify.com/)
 
-> [!TIP]
-> Follow our [Next.js guide](https://www.storyblok.com/docs/guides/nextjs/) for a step-by-step walkthrough and learn more about Storyblok's range of features, including rich text rendering, custom content modeling, and internationalization. See the [@storyblok/react package reference](https://storyblok.com/docs/packages/storyblok-react) for further information.
+## Installation
 
-***
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+- Storyblok account (free tier available)
 
-[![Open in GitHub Codespaces](https://img.shields.io/badge/Open%20in%20GitHub%20Codespaces-dad4ff.svg?style=for-the-badge&logo=GitHub&logoColor=181717&labelColor=ffffff&color=dad4ff)](https://github.com/codespaces/new?skip_quickstart=true&machine=basicLinux32gb&repo=962644002&ref=main&geo=EuropeWest)
-[![Try Storyblok free](https://img.shields.io/badge/Try%20Storyblok-dad4ff.svg?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZD0iTTQuNzA3IDIuNTM4aDIyLjUyOXYyMy41ODdINC43MDd6IiBzdHlsZT0iZmlsbDojZmZmIi8+PHBhdGggZmlsbD0iIzFmMWYxZiIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMS43NDMgMi42MDFBMi41OTcgMi41OTcgMCAwIDEgNC4zMzUgMGgyMy4zM2EyLjU5NyAyLjU5NyAwIDAgMSAyLjU5MiAyLjYwMXYyMy40MTFhMi41OTcgMi41OTcgMCAwIDEtMi41OTIgMi42MDJIMTIuNTQ4bC0zLjg3MiAzLjIwOGEuNzcuNzcgMCAwIDEtMS4yNjEtLjU5N3YtMi42MTFoLTMuMDhhMi41OTcgMi41OTcgMCAwIDEtMi41OTItMi42MDJabTUuNjcgMi4xMjdoMTIuNDYyYzIuNjkxIDAgNC44NzMgMi4xOSA0Ljg3MyA0Ljg5IDAgMi4xNjQtMS40IDQtMy4zNDIgNC42NDRhNC44ODcgNC44ODcgMCAwIDEgMy45OSA0LjgxYzAgMi43MDEtMi4xODEgNC44OS00Ljg3MyA0Ljg5SDcuNDEzdi05LjQ1NFptMTAuMzY0IDQuNEgxMS45NXYyLjkzNGg1LjgyOGMuODA4IDAgMS40NjItLjY1NiAxLjQ2Mi0xLjQ2NyAwLS44MS0uNjU0LTEuNDY3LTEuNDYyLTEuNDY3em0tNS44MjggNi41Mmg2LjMxNGMuODk3IDAgMS42MjQuNzMgMS42MjQgMS42MyAwIC45MDEtLjcyNyAxLjYzLTEuNjI0IDEuNjNoLTYuMzE0eiIgY2xpcC1ydWxlPSJldmVub2RkIiBzdHlsZT0ic3Ryb2tlLXdpZHRoOjEuNTE3NzUiLz48L3N2Zz4K&labelColor=ffffff)](https://app.storyblok.com/#/signup)
-[![Join the Storyblok Discord community](https://img.shields.io/discord/700316478792138842?style=for-the-badge&logo=discord&label=Join%20our%20community&labelColor=ffffff&color=dad4ff)](https://storyblok.com/join-discord)
+### Setup Steps
 
-## Get Started
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/jphdevsf-site.git
+   cd jphdevsf-site
+   ```
 
-**No Storyblok account yet? [Sign up now](https://app.storyblok.com/#/signup?utm_source=docs) to experience a 14-day free trial of all features and enjoy our completely free Starter plan.**
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-1. Create an empty new Storyblok space
-2. Create a new repository based on this template
-3. Open the project on your device
-4. Install dependencies
+3. **Configure environment variables**
+   Create a `.env` file in the root directory:
+   ```env
+   STORYBLOK_DELIVERY_API_TOKEN=your_storyblok_access_token
+   STORYBLOK_API_BASE_URL=https://api.storyblok.com/v2
+   STORYBLOK_REGION=eu
+   ```
 
-```sh
-npm install
+4. **Get your Storyblok access token**
+   - Go to your Storyblok space
+   - Navigate to **Settings** > **Access Tokens**
+   - Copy the preview token
+   - Add it to your `.env` file
+
+## Tech Stack Overview
+
+| Technology | Description |
+|------------|-------------|
+| **Node.js** | JavaScript runtime for server-side execution |
+| **Next.js** | React framework for full-stack web apps, with SSR & SSG features |
+| **React** | UI library |
+| **Storyblok** | Headless CMS with visual editor |
+| **TailwindCSS** | CSS utility class framework for rapid UI development (v4) |
+| **Netlify** | Serverless hosting platform with edge network and edge functions |
+| **Biome** | Fast linter and formatter for JavaScript/TypeScript |
+| **TypeScript** | Adds types to JavaScript, used in this project for netlify edge functions |
+
+## Project Structure
+
+```
+jphdevsf-site/
+├── src/
+│   ├── app/              # Next.js App Router pages
+│   │   ├── globals.css  # Global styles
+│   │   ├── layout.js    # Root layout
+│   │   └── [[...slug]]/ # Dynamic routing
+│   ├── components/       # React components
+│   │   ├── Card.jsx
+│   │   ├── Feature.jsx
+│   │   ├── Grid.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Link.jsx
+│   │   ├── Page.jsx
+│   │   ├── StoryblokProvider.jsx
+│   │   ├── TextBanner.jsx
+│   │   └── TextGroup.jsx
+│   └── lib/
+│       └── storyblok.js # Storyblok configuration
+├── netlify/
+│   └── edge-functions/  # Netlify Edge Functions
+│       ├── cache-demo.ts
+│       └── cache-page.ts
+├── public/              # Static assets
+└── configuration files
 ```
 
-### Authentication
+## Development
 
-In the root of the project, create a `.env` file to store the Storyblok access token:
+### Available CLI Commands
 
-```sh
-STORYBLOK_DELIVERY_API_TOKEN=<REPLACE_WITH_YOUR_TOKEN>
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Spin up local server for development |
+| `npm run build` | Build the application for production |
+| `npm run start` | Start the production server |
+| `npm run lint` | Run Biome linter to check code quality |
+| `npm run format` | Run Biome formatter to tidy up files in bulk |
+
+## Deployment
+
+This project is configured for Netlify deployment. Simply push to main branch of GitHub repo triggers automatic deployment
+
+
+### Edge Functions
+
+Two edge functions are configured for caching:
+
+1. **`/api/cache-demo`**: Demo endpoint showing edge caching with 1-hour TTL
+2. **`/*`**: Page caching for home page and specific routes
+
+Configuration in `netlify.toml`:
+```toml
+[[edge_functions]]
+  path = "/api/cache-demo"
+  function = "cache-demo"
+
+[[edge_functions]]
+  path = "/*"
+  function = "cache-page"
 ```
 
-> [!IMPORTANT]
-> Copy your space's preview access token from **Settings** > **Access Tokens**.
-> Learn more about Storyblok [access tokens](https://www.storyblok.com/docs/concepts/access-tokens).
+## Configuration Files
 
-### Connect the Visual Editor
+- `next.config.mjs` - Next.js configuration
+- `tailwind.config.js` - TailwindCSS configuration (v4)
+- `postcss.config.mjs` - PostCSS configuration
+- `biome.json` - Biome linting and formatting configuration
+- `netlify.toml` - Netlify deployment configuration
 
-To render a preview of the local project in the Visual Editor, follow these steps:
-
-1. Navigate to **Settings > Visual Editor**.
-2. Set the default environment to `https://localhost:3000/`.
-3. Save.
-4. Open the `home` story.
-5. Click **Config**.
-6. Type `/` in the **Real path**.
-
-Run the development server with HTTPS enabled:
-```sh
-npx next dev --experimental-https
-```
-
-> [!IMPORTANT]
-> To connect the Storyblok Visual Editor, the local project must run over HTTPS. Learn more in the [Visual Editor concept](https://www.storyblok.com/docs/concepts/visual-editor#local-development-via-https).
-
-Back in Storyblok, open the **Home** story to start editing.
-
-Happy building!
-
-## Resources
-
-- To learn more about what you can do with Storyblok, visit [our documentation and learning hub](https://www.storyblok.com/docs).
-- To learn more about the integration between Storyblok and Next.js, check our [dedicated developer tutorials](https://www.storyblok.com/tutorials?technologies=next).
-- To learn more about Next.js, check the [official documentation](https://nextjs.org/docs).
-
-### Support
-
-- Have questions, need help, want to chat with other users? [Join our Discord community](https://storyblok.com/join-discord).
-- Visit the Storyblok [Help Center](https://support.storyblok.com/hc/en-us).

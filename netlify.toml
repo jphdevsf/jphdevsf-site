@@ -5,3 +5,15 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Edge Functions Configuration
+[build]
+  edge_functions = "netlify/edge-functions"
+
+[[edge_functions]]
+  path = "/api/cache-demo"
+  function = "cache-demo"
+
+[[edge_functions]]
+  path = "/*"
+  function = "cache-page"
