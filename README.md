@@ -95,6 +95,8 @@ jphdevsf-site/
 | `npm run start` | Start the production server |
 | `npm run lint` | Run Biome linter to check code quality |
 | `npm run format` | Run Biome formatter to tidy up files in bulk |
+| `netlify build` | Test Netlify build locally to catch configuration errors |
+| `netlify dev` | Run Netlify development server with edge functions support |
 
 ## Deployment
 
