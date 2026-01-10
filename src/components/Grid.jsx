@@ -2,7 +2,7 @@ import { StoryblokServerComponent, storyblokEditable } from "@storyblok/react/rs
 
 const Grid = ({ blok }) => (
   <div {...storyblokEditable(blok)} className="grid max-w-[1440] my-8 mx-auto">
-    <h2 className="font-title text-title">{blok.Title}</h2>
+    <h2 className="font-leadin text-leadin-sm md:text-leadin-sm p-4">{blok.Title}</h2>
     {blok.Cards && blok.Cards.length > 0 && (
       <div className="flex flex-column md:flex-row justify-center flex-wrap lg:flex-nowrap">
         {blok.Cards.map(nestedBlok => (

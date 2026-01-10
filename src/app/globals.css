@@ -7,23 +7,47 @@
   --color-quaternary: #c5b2de;
 }
 
-@theme {
+@theme inline {
   --color-primary: #6900bf;
   --color-secondary: #ffe492;
   --color-tertiary: #bf2f5f;
   --color-quaternary: #c5b2de;
 
+  --container-7xl: 1440px;
+
+  --text-leadin-mob: 1.5rem;
+  --text-leadin-mob--line-height: 1.1em;
+  --text-leadin: 2.5rem;
+  --text-leadin--line-height: 1.1em;
+
+  --text-title-mob: 2.85rem;
+  --text-title-mob--line-height: 1.15em;
+  --text-title: 4rem;
+  --text-title--line-height: 1.15em;
+
+  --text-leadin-sm-mob: 1rem;
+  --text-leadin-sm-mob--line-height: 1.1em;
+  --text-leadin-sm: 1.35rem;
+  --text-leadin-sm--line-height: 1.1em;
+
+  --text-title-sm-mob: 1.5rem;
+  --text-title-sm-mob--line-height: 1.15em;
+  --text-title-sm: 2.5rem;
+  --text-title-sm--line-height: 1.15em;
+
+  --text-body-mob: 1rem;
+  --text-body: 1.5rem;
+
+  --text-body-sm-mob: 0.9rem;
+  --text-body-sm: 1rem;
+
+  --text-link-mob: 1rem;
+  --text-link: 1.5rem;
+
   --font-leadin: var(--font-source_serif_4);
   --font-title: var(--font-brunson);
   --font-body: var(--font-dm_sans);
   --font-nav: var(--font-dm_mono);
-
-  --container-7xl: 1440px;
-
-  --text-leadin: 2em;
-  --text-title: 3em;
-  --text-body: 1.5em;
-  --text-link: 1em;
 }
 
 h1,

@@ -12,8 +12,8 @@ const Hero = ({ blok }) => {
           ? "items-end"
           : "items-center"
   return (
-    <div
-      className="hero bg-red-950 text-xs md:text-sm lg:text-md relative block aspect-3/4 md:aspect-video"
+    <article
+      className="hero bg-red-950 relative block aspect-3/4 md:aspect-video"
       {...storyblokEditable(blok)}
     >
       {blok.image?.filename && (
@@ -36,7 +36,7 @@ const Hero = ({ blok }) => {
           </div>
         </div>
       )}
-    </div>
+    </article>
   )
 }
 

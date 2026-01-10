@@ -12,15 +12,21 @@ const TextGroup = ({ blok }) => {
           : "text-center"
   return (
     <div className={`textgroup ${textAlignClass}`} {...storyblokEditable(blok)}>
-      <h2 className="text-[1.75em] inline-block">
-        <span className={`${textAlignClass} font-leadin font-light italic text-leadin block`}>
+      <h2 className="inline-block">
+        <span
+          className={`${textAlignClass} font-leadin text-leadin-mob md:text-leadin  font-light italic block`}
+        >
           {blok.leadin}
         </span>
-        <span className={`${textAlignClass} font-title font-light tracking-wider text-title block`}>
+        <span
+          className={`${textAlignClass} font-title text-title-mob md:text-title  font-light tracking-wider block`}
+        >
           {blok.title}
         </span>
       </h2>
-      <span className={`${textAlignClass} font-body text-body block`}>{blok.body}</span>
+      <span className={`${textAlignClass} font-body text-body-mob md:text-body  block`}>
+        {blok.body}
+      </span>
       {blok.link &&
         blok.link.length > 0 &&
         blok.link.map(nestedBlok => (
