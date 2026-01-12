@@ -3,13 +3,11 @@ import type { Config, Context } from "@netlify/edge-functions"
 export default async (req: Request, context: Context) => {
   if (req.method !== "GET") return
   const response = await context.next()
-  return new Response(response.body, {
-    headers: {
-      'cache-control': 'public, s-maxage=3600',
-      "x-edge-cache": "hit",
-      "x-cached-at": new Date().toISOString(),
-    }
-  })
+  const newResponse = new Response(response.body, response)
+  newResponse.headers.set("cache-control", "public, s-maxage=3600")
+  newResponse.headers.set("x-edge-cache", "hit")
+  newResponse.headers.set("x-cached-at", new Date().toISOString())
+  return newResponse
 }
 
 export const config = {

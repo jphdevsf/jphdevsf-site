@@ -56,9 +56,9 @@ const CardTextGroup = ({ blok }) => {
       <span className={`${textAlignClass} font-body text-body-mob md:text-body  block`}>
         {blok.body}
       </span>
-      {blok.link &&
-        blok.link.length > 0 &&
-        blok.link.map(nestedBlok => (
+      {blok.links &&
+        blok.links.length > 0 &&
+        blok.links.map(nestedBlok => (
           <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
         ))}
     </div>
