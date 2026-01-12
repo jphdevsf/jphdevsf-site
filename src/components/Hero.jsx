@@ -17,10 +17,9 @@ const Hero = ({ blok }) => {
       {...storyblokEditable(blok)}
     >
       {blok.image?.filename && (
-        <Image
-          className="mask-l-from-10%"
+        <img
+          className="mask-l-from-10% object-cover"
           src={blok.image.filename}
-          fill={true}
           alt={blok.image.alt || ""}
         />
       )}

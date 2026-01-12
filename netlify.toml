@@ -8,9 +8,5 @@
   package = "@netlify/plugin-nextjs"
 
 [[edge_functions]]
-  path = "/api/cache-demo"
-  function = "cache-demo"
-
-[[edge_functions]]
   path = "/*"
   function = "cache-page"
