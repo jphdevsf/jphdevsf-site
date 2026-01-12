@@ -5,6 +5,13 @@
   --color-secondary: #ffe492;
   --color-tertiary: #bf2f5f;
   --color-quaternary: #c5b2de;
+  --color-figma_blue: #0d99ff;
+  --color-figma_red: #ff3737;
+  --color-figma_purple: #874fff;
+  --color-figma_orange: #ff7237;
+  --color-figma_green: #24cb71;
+  --color-figma_pink: #ffc9c1;
+  --color-figma_purple_light: #cb9fd2;
 }
 
 @theme inline {
@@ -12,6 +19,13 @@
   --color-secondary: #ffe492;
   --color-tertiary: #bf2f5f;
   --color-quaternary: #c5b2de;
+  --color-figma_blue: #0d99ff;
+  --color-figma_red: #ff3737;
+  --color-figma_purple: #874fff;
+  --color-figma_orange: #ff7237;
+  --color-figma_green: #24cb71;
+  --color-figma_pink: #ffc9c1;
+  --color-figma_purple_light: #cb9fd2;
 
   --container-7xl: 1440px;
 
@@ -43,11 +57,15 @@
 
   --text-link-mob: 1rem;
   --text-link: 1.5rem;
+  --text-link-sm-mob: 1rem;
+  --text-link-sm: 1.25rem;
 
   --font-leadin: var(--font-source_serif_4);
   --font-title: var(--font-brunson);
   --font-body: var(--font-dm_sans);
   --font-nav: var(--font-dm_mono);
+
+  --border-1: 1px;
 }
 
 /* h1,

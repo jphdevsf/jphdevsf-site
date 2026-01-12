@@ -1,6 +1,7 @@
 import { storyblokEditable } from "@storyblok/react/rsc"
+import Link from "next/link"
 
-const Link = ({ blok }) => {
+const TextLink = ({ blok }) => {
   const {
     title,
     type,
@@ -9,17 +10,20 @@ const Link = ({ blok }) => {
   return (
     <div className="link" {...storyblokEditable(blok)}>
       {type === "underline" && (
-        <a href={cached_url} className="inline-block my-2 py-3 underline">
+        <Link href={cached_url} className="inline-block my-2 py-3 underline">
           {title}
-        </a>
+        </Link>
       )}
       {type === "button" && (
-        <a href={cached_url} className="inline-block my-3 px-5 py-3 border-2 bg-white text-black">
+        <Link
+          href={cached_url}
+          className="inline-block my-3 px-5 py-3 border-2 bg-white text-black"
+        >
           {title}
-        </a>
+        </Link>
       )}
     </div>
   )
 }
 
-export default Link
+export default TextLink

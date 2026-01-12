@@ -1,17 +1,12 @@
 import { StoryblokStory } from "@storyblok/react/rsc"
-import { getStoryblokApi } from "@/lib/storyblok"
+import getStoryBlokData from "@/lib/getStoryBlokData"
 
 export default async function Page({ params }) {
   const { slug } = await params
 
   const fullSlug = slug ? slug.join("/") : "home"
 
-  const sbParams = {
-    version: process.env.NODE_ENV === "production" ? "published" : "draft"
-  }
-
-  const storyblokApi = getStoryblokApi()
-  const { data } = await storyblokApi.get(`cdn/stories/${fullSlug}`, sbParams)
+  const data = await getStoryBlokData(`cdn/stories/${fullSlug}`)
 
   return <StoryblokStory story={data.story} />
 }
