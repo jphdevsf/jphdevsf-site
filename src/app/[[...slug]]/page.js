@@ -9,4 +9,5 @@ export default async function Page({ params }) {
   const data = await getStoryBlokData(`cdn/stories/${fullSlug}`)
 
   return <StoryblokStory story={data.story} />
+  // return <>test</>
 }

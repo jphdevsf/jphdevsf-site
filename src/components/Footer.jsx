@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="flex justify-center items-center text-center border-t tracking-wide border-gray-200 bg-white mt-32 p-4 mb-2">
       <p className="text-sm text-gray-800 font-body">
-        &copy; All rights reserved © {currentYear}. &nbsp; | &nbsp;
+        &copy; {currentYear} Jacob Hernandez — Made with ❤️ in the Bay Area. &nbsp; | &nbsp;
         <Link href="https://github.com/jphdevsf" target="_blank" className="inline underline">
           GitHub
         </Link>

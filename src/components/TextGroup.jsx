@@ -1,6 +1,10 @@
 import { StoryblokServerComponent, storyblokEditable } from "@storyblok/react/rsc"
+import { Motion } from "@/components/Motion"
 
-const TextGroup = ({ blok }) => {
+/**
+ * This Component represents standard content model for a group of text elements used on all banners.
+ */
+const TextGroup = ({ blok, size = "lg" }) => {
   const { textAlign } = blok
   const textAlignClass =
     textAlign === "left"
@@ -10,23 +14,54 @@ const TextGroup = ({ blok }) => {
         : textAlign === "right"
           ? "text-right"
           : "text-center"
+
+  const sizeStyles = {
+    leadin: {
+      sm: "text-leadin-sm-mob md:text-leadin-sm",
+      md: "text-leadin-mob md:text-leadin",
+      lg: "text-leadin-lg-mob md:text-leadin-lg"
+    },
+    title: {
+      sm: "text-title-sm-mob md:text-title-sm",
+      md: "text-title-mob md:text-title",
+      lg: "text-title-lg-mob md:text-title-lg"
+    },
+    body: {
+      sm: "font-body text-body-mob md:text-body",
+      md: "text-body-mob md:text-body",
+      lg: "text-body-lg-mob md:text-body-lg"
+    }
+  }
   return (
     <div className={`textgroup ${textAlignClass}`} {...storyblokEditable(blok)}>
       <h2 className="inline-block">
-        <span
-          className={`${textAlignClass} font-leadin text-leadin-mob md:text-leadin  font-light italic block`}
-        >
-          {blok.leadin}
-        </span>
-        <span
-          className={`${textAlignClass} font-title text-title-mob md:text-title  font-light tracking-wider block`}
-        >
-          {blok.title}
-        </span>
+        {blok.leadin && (
+          <Motion variants="slideFromBottom" delay={0.2}>
+            <span
+              className={`${textAlignClass} font-leadin ${sizeStyles.leadin[size]} font-light italic block`}
+            >
+              {blok.leadin}
+            </span>
+          </Motion>
+        )}
+
+        {blok.title && (
+          <Motion variants="slideFromBottom" delay={0.3}>
+            <span
+              className={`${textAlignClass} font-title ${sizeStyles.title[size]} font-light tracking-wider block`}
+            >
+              {blok.title}
+            </span>
+          </Motion>
+        )}
       </h2>
-      <span className={`${textAlignClass} font-body text-body-mob md:text-body  block`}>
-        {blok.body}
-      </span>
+      {blok.body && (
+        <Motion variants="slideFromBottom" delay={0.4}>
+          <p className={`${textAlignClass} font-body ${sizeStyles.body[size]} block`}>
+            {blok.body}
+          </p>
+        </Motion>
+      )}
       {blok.links &&
         blok.links.length > 0 &&
         blok.links.map(nestedBlok => (

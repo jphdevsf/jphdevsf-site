@@ -12,15 +12,17 @@ const Feature = ({ blok }) => {
           : "items-center"
   return (
     <div
-      className="feature bg-red-950 relative flex flex-col md:flex-row my-8"
+      className="feature bg-indigo-950 relative flex flex-col md:flex-row my-8"
       {...storyblokEditable(blok)}
     >
       {blok.image?.filename && (
-        <img
-          className="block w-full md:w-1/2"
-          src={blok.image.filename}
-          alt={blok.image.alt || ""}
-        />
+        <div className="aspect-square w-full md:w-1/2 md:aspect-4/3 overflow-hidden">
+          <img
+            className="object-cover w-full h-full"
+            src={blok.image.filename}
+            alt={blok.image.alt || ""}
+          />
+        </div>
       )}
 
       {blok.textgroups && blok.textgroups.length > 0 && (

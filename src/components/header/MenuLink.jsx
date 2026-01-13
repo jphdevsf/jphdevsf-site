@@ -1,5 +1,6 @@
 import { storyblokEditable } from "@storyblok/react"
 import Link from "next/link"
+import { Motion } from "@/components/Motion"
 
 const MenuLink = ({ blok }) => {
   return (

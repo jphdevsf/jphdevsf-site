@@ -2,7 +2,9 @@ export default async req => {
   try {
     const body = await req.json()
 
-    const slug = body.story?.full_slug
+    // json varies between prod and
+    const slug = body.story?.full_slug || body.full_slug
+
     if (!slug) {
       return new Response(JSON.stringify({ error: "Missing slug" }), { status: 400 })
     }

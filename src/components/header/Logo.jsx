@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const Logo = () => {
   return (
-    <div className="flex items-center p-2">
+    <div className="flex items-center mx-4">
       <div className="logo-container text-secondary w-8 border-2 border-figma_green aspect-square rounded-full overflow-hidden">
         <Image
           src="/image/logo.png"

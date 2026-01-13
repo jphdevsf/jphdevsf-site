@@ -12,16 +12,15 @@ const Hero = ({ blok }) => {
           ? "items-end"
           : "items-center"
   return (
-    <article
-      className="hero bg-red-950 relative block aspect-3/4 md:aspect-video"
-      {...storyblokEditable(blok)}
-    >
+    <article className="hero bg-indigo-950 relative block" {...storyblokEditable(blok)}>
       {blok.image?.filename && (
-        <img
-          className="mask-l-from-10% object-cover"
-          src={blok.image.filename}
-          alt={blok.image.alt || ""}
-        />
+        <div className="aspect-square md:aspect-video overflow-hidden">
+          <img
+            className="mask-l-from-5% object-cover w-full h-full"
+            src={blok.image.filename}
+            alt={blok.image.alt || ""}
+          />
+        </div>
       )}
 
       {blok.textgroups && blok.textgroups.length > 0 && (

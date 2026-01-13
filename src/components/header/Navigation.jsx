@@ -8,7 +8,7 @@ const Navigation = async () => {
     }
   } = await getStoryBlokData("cdn/stories/config", { resolve_links: "url" })
   return (
-    <nav className="flex items-center bg-figma_purple_light">
+    <nav className="flex items-center bg-figma_red">
       <ul className="flex">
         {header_menu?.map(nestedBlok => (
           <StoryblokComponent className="" blok={nestedBlok} key={nestedBlok._uid} />

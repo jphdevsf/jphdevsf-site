@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tailwind-animations";
 
 :root {
   --color-primary: #6900bf;
@@ -29,25 +30,38 @@
 
   --container-7xl: 1440px;
 
+  --text-leadin-lg-mob: 1.5rem;
+  --text-leadin-lg-mob--line-height: 1.1em;
+  --text-leadin-lg: 2.5rem;
+  --text-leadin-lg--line-height: 1.1em;
+
   --text-leadin-mob: 1.5rem;
-  --text-leadin-mob--line-height: 1.1em;
+  --text-leadin-mob--line-height: 1.5em;
   --text-leadin: 2.5rem;
   --text-leadin--line-height: 1.1em;
-
-  --text-title-mob: 2.85rem;
-  --text-title-mob--line-height: 1.15em;
-  --text-title: 4rem;
-  --text-title--line-height: 1.15em;
 
   --text-leadin-sm-mob: 1rem;
   --text-leadin-sm-mob--line-height: 1.1em;
   --text-leadin-sm: 1.35rem;
   --text-leadin-sm--line-height: 1.1em;
 
-  --text-title-sm-mob: 1.5rem;
-  --text-title-sm-mob--line-height: 1.15em;
+  --text-title-lg-mob: 2.85rem;
+  --text-title-lg-mob--line-height: 1.15em;
+  --text-title-lg: 4rem;
+  --text-title-lg--line-height: 1.35em;
+
+  --text-title-mob: 2.25rem;
+  --text-title-mob--line-height: 1.2em;
+  --text-title: 3.25rem;
+  --text-title--line-height: 1.35em;
+
+  --text-title-sm-mob: 1.85rem;
+  --text-title-sm-mob--line-height: 1.5em;
   --text-title-sm: 2.5rem;
-  --text-title-sm--line-height: 1.15em;
+  --text-title-sm--line-height: 1.25em;
+
+  --text-body-lg-mob: 1rem;
+  --text-body-lg: 1.5rem;
 
   --text-body-mob: 1rem;
   --text-body: 1.5rem;
@@ -55,8 +69,12 @@
   --text-body-sm-mob: 0.9rem;
   --text-body-sm: 1rem;
 
+  --text-link-lg-mob: 1rem;
+  --text-link-lg: 1.5rem;
+
   --text-link-mob: 1rem;
   --text-link: 1.5rem;
+
   --text-link-sm-mob: 1rem;
   --text-link-sm: 1.25rem;
 
@@ -66,6 +84,14 @@
   --font-nav: var(--font-dm_mono);
 
   --border-1: 1px;
+}
+
+[class*="onview:"] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 /* h1,

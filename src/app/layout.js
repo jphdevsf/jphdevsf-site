@@ -5,7 +5,6 @@ import Footer from "@/components/Footer"
 import Header from "@/components/header/Header"
 import Logo from "@/components/header/Logo"
 import Navigation from "@/components/header/Navigation"
-import StoryblokProvider from "@/components/StoryblokProvider"
 
 export const metadata = {
   title: "Create Next App",
@@ -47,19 +46,17 @@ const brunson = localFont({
 
 export default function RootLayout({ children }) {
   return (
-    <StoryblokProvider>
-      <html lang="en">
-        <body
-          className={`${source_serif_4.variable} ${brunson.variable} ${dm_sans.variable} ${dm_mono.variable}`}
-        >
-          <Header>
-            <Logo />
-            <Navigation />
-          </Header>
-          {children}
-          <Footer />
-        </body>
-      </html>
-    </StoryblokProvider>
+    <html lang="en">
+      <body
+        className={`${source_serif_4.variable} ${brunson.variable} ${dm_sans.variable} ${dm_mono.variable}`}
+      >
+        <Header>
+          <Logo />
+          <Navigation />
+        </Header>
+        {children}
+        <Footer />
+      </body>
+    </html>
   )
 }
