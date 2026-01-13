@@ -3,7 +3,7 @@ import Image from "next/image"
 const Logo = () => {
   return (
     <div className="flex items-center mx-4">
-      <div className="logo-container text-secondary w-8 border-2 border-figma_green aspect-square rounded-full overflow-hidden">
+      <div className="logo-container text-secondary w-7 border-4 border-figma_green aspect-square rounded-full overflow-hidden">
         <Image
           src="/image/logo.png"
           alt="Logo"
@@ -12,7 +12,7 @@ const Logo = () => {
           className="relative w-full h-full object-cover"
         />
       </div>
-      <span className="font-title text-center text-xl md:text-2xl lg:text-3xl text-purple-950 tracking-wide uppercase leading-none font-heading-bold mx-2">
+      <span className="font-title text-center text-xl md:text-2xl lg:text-3xl text-purple-950 tracking-wide uppercase leading-none font-heading-bold">
         <span className="text-figma_purple">JPH</span>
         <span className="text-figma_red">DEV</span>
         <span className="text-figma_blue">SF</span>
