@@ -1,8 +1,9 @@
 import Image from "next/image"
+import Link from "next/link"
 
 const Logo = () => {
   return (
-    <div className="flex items-center mx-4">
+    <Link href="/" className="flex items-center mx-4 p-1 md:p-0">
       <div className="logo-container text-secondary w-7 border-4 border-figma_green aspect-square rounded-full overflow-hidden">
         <Image
           src="/image/logo.png"
@@ -13,11 +14,11 @@ const Logo = () => {
         />
       </div>
       <span className="font-title text-center text-xl md:text-2xl lg:text-3xl text-purple-950 tracking-wide uppercase leading-none font-heading-bold">
-        <span className="text-figma_purple">JPH</span>
+        <span className="text-indigo-950">JPH</span>
         <span className="text-figma_red">DEV</span>
         <span className="text-figma_blue">SF</span>
       </span>
-    </div>
+    </Link>
   )
 }
 

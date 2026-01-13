@@ -51,7 +51,7 @@ Hi there! Here we have a quick POC website demonstrating modern full-stack devel
 | **React** | UI library |
 | **Storyblok** | Headless CMS with visual editor |
 | **TailwindCSS** | CSS utility class framework for rapid UI development (v4) |
-| **Tailwind-Animations** | Extends Tailwind with additional animation utility classes |
+| **Motion (Formerly Framer Motion)** | React animation library |
 | **Netlify** | Serverless hosting platform with edge network and edge functions |
 | **Biome** | Fast linter and formatter for JavaScript/TypeScript |
 | **TypeScript** | Adds types to JavaScript, used in this project for netlify edge functions |

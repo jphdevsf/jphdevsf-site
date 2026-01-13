@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tailwind-animations";
 
 :root {
   --color-primary: #6900bf;

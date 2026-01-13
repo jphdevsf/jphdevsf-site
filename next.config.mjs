@@ -8,7 +8,10 @@ const nextConfig = {
     STORYBLOK_REGION: process.env.STORYBLOK_REGION
   },
   images: {
-    remotePatterns: [new URL("https://a.storyblok.com/**")]
+    remotePatterns: [
+      new URL("https://a.storyblok.com/**"),
+      { protocol: "https", hostname: "avatars.githubusercontent.com" }
+    ]
   }
 }
 

@@ -1,9 +1,12 @@
 import { apiPlugin, storyblokInit } from "@storyblok/react/rsc"
 import Card from "@/components/Card"
 import Feature from "@/components/Feature"
+import FileDownload from "@/components/FileDownload"
+import GithubStats from "@/components/GithubStats"
 import Grid from "@/components/Grid"
 import Hero from "@/components/Hero"
 import MenuLink from "@/components/header/MenuLink"
+import MarkdownSection from "@/components/MarkdownSection"
 import Page from "@/components/Page"
 import TextBanner from "@/components/TextBanner"
 import TextGroup from "@/components/TextGroup"
@@ -28,6 +31,9 @@ export const getStoryblokApi = storyblokInit({
     hero: Hero,
     textgroup: TextGroup,
     link: TextLink,
-    menu_link: MenuLink
+    menu_link: MenuLink,
+    github_stats: GithubStats,
+    file_download: FileDownload,
+    markdown_section: MarkdownSection
   }
 })
