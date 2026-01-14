@@ -1,4 +1,4 @@
-import type { Config, Context } from "@netlify/edge-functions"
+import type { Context } from "@netlify/edge-functions"
 
 export default async (req: Request, context: Context) => {
   if (req.method !== "GET") return
@@ -11,6 +11,5 @@ export default async (req: Request, context: Context) => {
 
 export const config = {
   path: "/*",
-  onError: "bypass",
-  cache: "manual"
+  onError: "bypass"
 }

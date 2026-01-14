@@ -1,5 +1,6 @@
 import { StoryblokServerComponent, storyblokEditable } from "@storyblok/react/rsc"
-import Image from "next/image"
+import { Motion } from "@/components/elements/Motion"
+import SBPicture from "@/components/elements/SBPicture"
 
 const Hero = ({ blok }) => {
   const { align } = blok
@@ -15,11 +16,16 @@ const Hero = ({ blok }) => {
     <article className="hero bg-indigo-950 relative block" {...storyblokEditable(blok)}>
       {blok.image?.filename && (
         <div className="aspect-square md:aspect-video overflow-hidden">
-          <img
-            className="mask-l-from-5% object-cover w-full h-full"
-            src={blok.image.filename}
-            alt={blok.image.alt || ""}
-          />
+          <Motion variants="fadeIn" delay="0.75">
+            <SBPicture
+              src={blok.image.filename}
+              alt={blok.image.alt || ""}
+              mobileRatio="1:1"
+              desktopRatio="16:9"
+              className="mask-l-from-5% block w-full h-full"
+              loading="eager"
+            />
+          </Motion>
         </div>
       )}
 
@@ -29,7 +35,7 @@ const Hero = ({ blok }) => {
         >
           <div className="md:max-w-2/3 lg:max-w-1/2 relative block text-white">
             {blok.textgroups.map(nestedBlok => (
-              <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
+              <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} size="lg" />
             ))}
           </div>
         </div>
