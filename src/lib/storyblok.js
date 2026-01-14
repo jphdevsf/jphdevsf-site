@@ -1,16 +1,16 @@
 import { apiPlugin, storyblokInit } from "@storyblok/react/rsc"
-import Card from "@/components/Card"
-import Feature from "@/components/Feature"
-import FileDownload from "@/components/FileDownload"
-import GithubStats from "@/components/GithubStats"
-import Grid from "@/components/Grid"
-import Hero from "@/components/Hero"
+import Card from "@/components/blocks/Card"
+import Feature from "@/components/blocks/Feature"
+import FileDownload from "@/components/blocks/FileDownload"
+import GithubWidget from "@/components/blocks/GithubWidget"
+import Grid from "@/components/blocks/Grid"
+import Hero from "@/components/blocks/Hero"
+import MarkdownSection from "@/components/blocks/MarkdownSection"
+import TextBanner from "@/components/blocks/TextBanner"
+import TextGroup from "@/components/elements/TextGroup"
+import TextLink from "@/components/elements/TextLink"
 import MenuLink from "@/components/header/MenuLink"
-import MarkdownSection from "@/components/MarkdownSection"
-import Page from "@/components/Page"
-import TextBanner from "@/components/TextBanner"
-import TextGroup from "@/components/TextGroup"
-import TextLink from "@/components/TextLink"
+import Page from "@/components/templates/Page"
 
 export const getStoryblokApi = storyblokInit({
   accessToken: process.env.STORYBLOK_DELIVERY_API_TOKEN,
@@ -32,7 +32,7 @@ export const getStoryblokApi = storyblokInit({
     textgroup: TextGroup,
     link: TextLink,
     menu_link: MenuLink,
-    github_stats: GithubStats,
+    github_stats: GithubWidget,
     file_download: FileDownload,
     markdown_section: MarkdownSection
   }

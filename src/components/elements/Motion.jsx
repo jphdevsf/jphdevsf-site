@@ -1,6 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
-import { cloneElement, isValidElement } from "react"
+import { isValidElement } from "react"
 
 export function Motion({ children, variants = "slideFromBottom", delay = 0.2 }) {
   if (!isValidElement(children)) return children

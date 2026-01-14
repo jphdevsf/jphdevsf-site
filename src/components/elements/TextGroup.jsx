@@ -1,5 +1,5 @@
 import { StoryblokServerComponent, storyblokEditable } from "@storyblok/react/rsc"
-import { Motion } from "@/components/Motion"
+import { Motion } from "@/components/elements/Motion"
 
 /**
  * This Component represents standard content model for a group of text elements used on all banners.

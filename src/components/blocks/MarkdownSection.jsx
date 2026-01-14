@@ -19,7 +19,7 @@ export default function MarkdownSection({ blok }) {
       className={`${styles.section} w-full px-0 py-14 md:py-20 md:px-12 flex flex-col ${alignClass}`}
       {...storyblokEditable(blok)}
     >
-      <div className="max-w-[1020px] mx-auto bg-gray-50 block p-4 md-p-8">
+      <div className="max-w-255 mx-auto bg-gray-50 block p-4 md-p-8">
         <ReactMarkdown>{blok.content}</ReactMarkdown>
       </div>
     </section>

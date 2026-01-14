@@ -3,7 +3,7 @@ import Link from "next/link"
 const Footer = () => {
   const currentYear = new Date().getFullYear()
   return (
-    <footer className="flex justify-center items-center text-center border-t tracking-wide border-gray-200 bg-indigo-950 mt-32 p-4 mb-2">
+    <footer className="flex justify-center items-center text-center border-t tracking-wide border-gray-200 bg-indigo-950 p-4">
       <p className="text-sm text-white font-body">
         <span className="block md:inline">
           &copy; {currentYear} Jacob Hernandez — Made with ❤️ in the Bay Area.

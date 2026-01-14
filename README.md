@@ -41,7 +41,7 @@ Hi there! Here we have a quick POC website demonstrating modern full-stack devel
    - Navigate to **Settings** > **Access Tokens**
    - Copy the preview token
    - Add it to your `.env` file
-
+Upda
 ## Tech Stack Overview
 
 | Technology | Description |
@@ -61,28 +61,51 @@ Hi there! Here we have a quick POC website demonstrating modern full-stack devel
 ```
 jphdevsf-site/
 ├── src/
-│   ├── app/              # Next.js App Router pages
-│   │   ├── globals.css  # Global styles
-│   │   ├── layout.js    # Root layout
-│   │   └── [[...slug]]/ # Dynamic routing
-│   ├── components/       # React components
-│   │   ├── Card.jsx
-│   │   ├── Feature.jsx
-│   │   ├── Grid.jsx
-│   │   ├── Hero.jsx
-│   │   ├── Link.jsx
-│   │   ├── Page.jsx
-│   │   ├── StoryblokProvider.jsx
-│   │   ├── TextBanner.jsx
-│   │   └── TextGroup.jsx
-│   └── lib/
-│       └── storyblok.js # Storyblok configuration
+│   ├── app/             
+│   │   ├── globals.css  
+│   │   ├── layout.js    
+│   │   ├── not-found.js 
+│   │   ├── [[...slug]]/ 
+│   │   │   └── page.j
+│   │   ├── favicons/    
+│   │   └── fonts/       
+│   ├── components/      
+│   │   ├── blocks/      
+│   │   │   ├── Card.jsx
+│   │   │   ├── Feature.jsx
+│   │   │   ├── FileDownload.jsx
+│   │   │   ├── GithubWidget.jsx
+│   │   │   ├── Grid.jsx
+│   │   │   ├── Hero.jsx
+│   │   │   ├── MarkdownSection.jsx
+│   │   │   ├── MarkdownSection.module.css
+│   │   │   └── TextBanner.jsx
+│   │   ├── elements/     
+│   │   │   ├── Motion.jsx
+│   │   │   ├── SBPicture.jsx
+│   │   │   ├── TextGroup.jsx
+│   │   │   └── TextLink.jsx
+│   │   ├── header/       
+│   │   │   ├── Header.jsx
+│   │   │   ├── Logo.jsx
+│   │   │   ├── MenuLink.jsx
+│   │   │   └── Navigation.jsx
+│   │   └── templates/    
+│   │       ├── Footer.jsx
+│   │       └── Page.jsx
+│   └── lib/              
+│       ├── getStoryBlokData.js
+│       ├── storyblok.js # Storyblok configuration
+│       └── storyblokImageUrl.js
 ├── netlify/
-│   └── edge-functions/  # Netlify Edge Functions
-│       ├── cache-demo.ts
-│       └── cache-page.ts
-├── public/              # Static assets
-└── configuration files
+│   ├── edge-functions/  
+│   │   └── cache-page.ts
+│   └── functions/       
+│       └── revalidate.js
+├── public/              
+│   ├── fonts/
+│   └── image/
+└── configuration files  # See Configuration Files section
 ```
 
 ## Development
@@ -104,22 +127,11 @@ jphdevsf-site/
 This project is configured for Netlify deployment. Simply push to main branch of GitHub repo triggers automatic deployment
 
 
-### Edge Functions
-
-Two edge functions are configured for caching:
-
-1. **`/api/cache-demo`**: Demo endpoint showing edge caching with 1-hour TTL
-2. **`/*`**: Page caching for home page and specific routes
-
-Configuration in `netlify.toml`:
-```toml
-[[edge_functions]]
-  path = "/api/cache-demo"
-  function = "cache-demo"
-
-[[edge_functions]]
-  path = "/*"
-  function = "cache-page"
+### Selective Cache clearing (ISR) with Netlify & Storyblok
+- `cache-page.ts` – This Netlify edge function is configured to cache all GET requests to the site for faster load times.
+- `revalidate.js` – This Netlify function is configured to "revalidate" or clear cache of a particular "story" or page slug passed in the json request.
+- In Storyblok dashboard, a webhook is set up to fire the Netlify revalidate function whenever a "story" or page update is published.
+- 
 ```
 
 ## Configuration Files

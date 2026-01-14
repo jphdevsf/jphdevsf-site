@@ -1,7 +1,6 @@
 import { storyblokEditable } from "@storyblok/react/rsc"
-import { motion } from "motion/react"
 import Link from "next/link"
-import { Motion } from "@/components/Motion"
+import { Motion } from "@/components/elements/Motion"
 
 const TextLink = ({ blok }) => {
   const {
@@ -22,7 +21,7 @@ const TextLink = ({ blok }) => {
         <Motion variants="fadeIn" delay={0.75}>
           <Link
             href={cached_url}
-            className="inline-block my-3 px-5 py-3 border-2 bg-white text-black"
+            className="inline-block my-3 px-5 py-3 border-2 border-indigo-950 bg-white text-black"
           >
             {title}
           </Link>
