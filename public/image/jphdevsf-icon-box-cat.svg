@@ -1,0 +1,14 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="128" height="128" rx="20" fill="#1E1A4D"/>
+<path d="M21.5575 10.4653C13.9522 8.61177 11.521 14.1845 11.521 20.1718V103.159C11.521 114.673 18.1991 117.436 27.6407 117.436H105.015C111.463 117.436 116.529 111.91 116.529 103.159V20.1718C116.529 13.2634 114.747 8.44191 106.838 10.4653C103.824 11.2362 89.3559 24.8636 89.3559 24.8636H38.6941C32.6105 19.1578 24.1304 11.0923 21.5575 10.4653Z" fill="white" stroke="#1E1A4D" stroke-width="4" stroke-linejoin="round"/>
+<path d="M46.3848 93.9285C49.14 97.2423 64.2706 99.7082 64.2706 86.318C64.2706 100.043 77.8282 97.5323 82.2402 93.9285" stroke="#1E1A4D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M64.3682 84.6575L58.7832 78.8491H69.618L64.3682 84.6575Z" fill="#1E1A4D" stroke="#1E1A4D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M125.395 75.5099L106.627 84.8363M125.395 102.568L106.627 93.2415" stroke="#1E1A4D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M3 75.3947L21.7679 84.721M3 102.453L21.7679 93.1263" stroke="#1E1A4D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M99.4874 30.9506L108.008 23.1211V37.8591L99.4874 30.9506Z" fill="#1E1A4D" stroke="#1E1A4D" stroke-width="4" stroke-linejoin="round"/>
+<path d="M28.7909 30.7204L20.2705 23.1211V38.5499L28.7909 30.7204Z" fill="#1E1A4D" stroke="#1E1A4D" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="42.1476" cy="58.5843" r="16.5802" fill="#1E1A4D"/>
+<circle cx="86.1315" cy="58.5843" r="16.5802" fill="#1E1A4D"/>
+<path d="M39.1541 54.8997C39.1541 56.9346 37.5045 58.5842 35.4697 58.5842C33.4348 58.5842 31.7852 56.9346 31.7852 54.8997C31.7852 52.8648 33.4348 51.2152 35.4697 51.2152C37.5045 51.2152 39.1541 52.8648 39.1541 54.8997Z" fill="white"/>
+<path d="M84.2892 54.8997C84.2892 56.9346 82.6396 58.5842 80.6047 58.5842C78.5698 58.5842 76.9202 56.9346 76.9202 54.8997C76.9202 52.8648 78.5698 51.2152 80.6047 51.2152C82.6396 51.2152 84.2892 52.8648 84.2892 54.8997Z" fill="white"/>
+</svg>
