@@ -21,6 +21,7 @@ export async function POST(request) {
 
     return Response.json({ revalidated: true })
   } catch (err) {
+    console.error(err)
     return Response.json({ message: "Error revalidating" }, { status: 500 })
   }
 }

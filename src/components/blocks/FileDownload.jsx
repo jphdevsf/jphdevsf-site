@@ -1,4 +1,4 @@
-export default function FileDownload({ blok }) {
+const FileDownload = ({ blok }) => {
   const url = blok.file?.filename
   const label = blok.title || "Download"
 
@@ -14,3 +14,5 @@ export default function FileDownload({ blok }) {
     </a>
   )
 }
+
+export default FileDownload

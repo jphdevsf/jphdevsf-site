@@ -14,7 +14,7 @@ const languageColors = {
   Java: "#b07219"
 }
 
-export default async function GithubWidget() {
+const GithubWidget = async () => {
   const res = await fetch("https://api.github.com/users/jphdevsf/repos?sort=pushed", {
     next: { revalidate: 3600 }
   })
@@ -78,3 +78,5 @@ export default async function GithubWidget() {
     </article>
   )
 }
+
+export default GithubWidget

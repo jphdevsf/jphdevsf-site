@@ -9,7 +9,7 @@ import MarkdownSection from "@/components/blocks/MarkdownSection"
 import TextBanner from "@/components/blocks/TextBanner"
 import TextGroup from "@/components/elements/TextGroup"
 import TextLink from "@/components/elements/TextLink"
-import MenuLink from "@/components/header/MenuLink"
+import MenuLink from "@/components/templates/header/MenuLink"
 import Page from "@/components/templates/Page"
 
 export const getStoryblokApi = storyblokInit({

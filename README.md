@@ -19,7 +19,7 @@ Hi there! Here we have a quick POC website demonstrating modern full-stack devel
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/jphdevsf-site.git
+   git clone https://github.com/jphdevsf/jphdevsf-site
    cd jphdevsf-site
    ```
 
@@ -29,19 +29,15 @@ Hi there! Here we have a quick POC website demonstrating modern full-stack devel
    ```
 
 3. **Configure environment variables**
-   Create a `.env` file in the root directory:
+   Create copy of `.env.example` and rename as `.env` file in the root directory and add respective values:
    ```env
-   STORYBLOK_DELIVERY_API_TOKEN=your_storyblok_access_token
-   STORYBLOK_API_BASE_URL=https://api.storyblok.com/v2
-   STORYBLOK_REGION=eu
+   STORYBLOK_DELIVERY_API_TOKEN=<REPLACE_WITH_YOUR_TOKEN>
+   STORYBLOK_API_BASE_URL=https://api.storyblok.com
+   STORYBLOK_REGION=<REPLACE_WITH_SPACE_REGION>
+   REVALIDATE_SECRET_TOKEN=<REPLACE WITH MANUALLY GENERATED 32 CHAR SECRET>
+   NEXT_PUBLIC_SITE_URL=<REPLACE WITH DEPLOYED URL FOR APP>
    ```
 
-4. **Get your Storyblok access token**
-   - Go to your Storyblok space
-   - Navigate to **Settings** > **Access Tokens**
-   - Copy the preview token
-   - Add it to your `.env` file
-Upda
 ## Tech Stack Overview
 
 | Technology | Description |
@@ -54,7 +50,6 @@ Upda
 | **Motion (Formerly Framer Motion)** | React animation library |
 | **Netlify** | Serverless hosting platform with edge network and edge functions |
 | **Biome** | Fast linter and formatter for JavaScript/TypeScript |
-| **TypeScript** | Adds types to JavaScript, used in this project for netlify edge functions |
 
 ## Project Structure
 
@@ -62,13 +57,16 @@ Upda
 jphdevsf-site/
 ├── src/
 │   ├── app/             
+│   │   ├── api/
+│   │   │   └── revalidate/
+│   │   │       └── route.js
+│   │   ├── favicons/
+│   │   ├── fonts/
 │   │   ├── globals.css  
 │   │   ├── layout.js    
 │   │   ├── not-found.js 
 │   │   ├── [[...slug]]/ 
-│   │   │   └── page.j
-│   │   ├── favicons/    
-│   │   └── fonts/       
+│   │   │   └── page.js  
 │   ├── components/      
 │   │   ├── blocks/      
 │   │   │   ├── Card.jsx
@@ -85,13 +83,13 @@ jphdevsf-site/
 │   │   │   ├── SBPicture.jsx
 │   │   │   ├── TextGroup.jsx
 │   │   │   └── TextLink.jsx
-│   │   ├── header/       
-│   │   │   ├── Header.jsx
-│   │   │   ├── Logo.jsx
-│   │   │   ├── MenuLink.jsx
-│   │   │   └── Navigation.jsx
 │   │   └── templates/    
 │   │       ├── Footer.jsx
+│   │       ├── header/       
+│   │       │   ├── Header.jsx
+│   │       │   ├── Logo.jsx
+│   │       │   ├── MenuLink.jsx
+│   │       │   └── Navigation.jsx
 │   │       └── Page.jsx
 │   └── lib/              
 │       ├── getStoryBlokData.js
@@ -101,7 +99,7 @@ jphdevsf-site/
 │   ├── edge-functions/  
 │   │   └── cache-page.ts
 │   └── functions/       
-│       └── revalidate.js
+│       └── revalidate.mjs
 ├── public/              
 │   ├── fonts/
 │   └── image/

@@ -1,5 +1,12 @@
 export default async req => {
   try {
+    // Guard logic for local development mode
+    if (process.env.NETLIFY_DEV === "true") {
+      return new Response(JSON.stringify({ message: "Local dev: skipping revalidation" }), {
+        status: 200
+      })
+    }
+
     const body = await req.json()
 
     // Extract slug from Storyblok webhook

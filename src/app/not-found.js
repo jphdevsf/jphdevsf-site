@@ -1,9 +1,9 @@
 import { StoryblokStory } from "@storyblok/react/rsc"
 import getStoryBlokData from "@/lib/getStoryBlokData"
 
-export default async function NotFound() {
+const NotFound = async () => {
   try {
-    const data = await getStoryBlokData(`cdn/stories/not-found/`)
+    const data = await getStoryBlokData(`cdn/stories/not-found`)
     return <StoryblokStory story={data.story} />
   } catch (error) {
     console.error("Not-found story fetch failed:", error)
@@ -15,3 +15,5 @@ export default async function NotFound() {
     )
   }
 }
+
+export default NotFound

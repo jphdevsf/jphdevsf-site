@@ -2,7 +2,7 @@ import { StoryblokStory } from "@storyblok/react/rsc"
 import { notFound } from "next/navigation"
 import getStoryBlokData from "@/lib/getStoryBlokData"
 
-export default async function Page({ params }) {
+const Page = async ({ params }) => {
   const { slug } = await params
   const fullSlug = slug ? slug.join("/") : "home"
   let storyblokData
@@ -21,3 +21,5 @@ export default async function Page({ params }) {
 
   return <StoryblokStory story={storyblokData.story} />
 }
+
+export default Page

@@ -1,6 +1,6 @@
 import { sbImg } from "@/lib/storyblokImageUrl"
 
-export default function SBPicture({
+const SBPicture = ({
   src,
   alt = "",
   mobileRatio = "1:1",
@@ -9,7 +9,7 @@ export default function SBPicture({
   className = "",
   sizes = "100vw",
   loading = "lazy"
-}) {
+}) => {
   const [mw, mh] = mobileRatio.split(":").map(Number)
   const [dw, dh] = desktopRatio.split(":").map(Number)
 
@@ -51,3 +51,5 @@ export default function SBPicture({
     </picture>
   )
 }
+
+export default SBPicture

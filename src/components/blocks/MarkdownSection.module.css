@@ -14,45 +14,44 @@
   position: relative;
 }
 
-/* Headings */
 .section h1 {
   display: block;
-  font-size: 2.25em;
-  font-weight: 700;
   margin-top: 1em;
   margin-bottom: -2em;
+  font-size: 2.25em;
+  font-weight: 700;
   color: #333333;
 }
 
 .section h2 {
   display: block;
-  font-size: 1.5em;
-  font-weight: 600;
   margin-top: 3em;
   margin-bottom: 0.5em;
+  font-size: 1.5em;
+  font-weight: 600;
   color: #333333;
 }
 
 .section h3 {
   display: block;
-  font-size: 1.25em;
-  font-weight: 600;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
+  font-size: 1.25em;
+  font-weight: 600;
   color: #333333;
 }
 
 /* Paragraphs */
 .section p {
-  line-height: 1.65;
   margin-bottom: 1em;
+  line-height: 1.65;
 }
 
 /* Lists */
 .section ul {
-  list-style: disc;
   padding-left: 1.5em;
   margin-bottom: 1em;
+  list-style: disc;
 }
 
 .section li {
@@ -66,9 +65,9 @@
 
 /* Horizontal rule */
 .section hr {
+  margin: 2em 0;
   border: none;
   border-top: 1px solid #e5e7eb;
-  margin: 2em 0;
 }
 
 /* Links */
@@ -79,15 +78,15 @@
 
 /* Code blocks */
 .section pre {
-  background: #f3f4f6;
   padding: 1em;
-  border-radius: 6px;
-  overflow-x: auto;
   margin-bottom: 1em;
+  overflow-x: auto;
+  background: #f3f4f6;
+  border-radius: 6px;
 }
 
 .section code {
-  background: #f3f4f6;
   padding: 0.2em 0.4em;
+  background: #f3f4f6;
   border-radius: 4px;
 }

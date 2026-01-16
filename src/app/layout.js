@@ -1,12 +1,13 @@
 import { DM_Mono, DM_Sans, Source_Serif_4 } from "next/font/google"
 import localFont from "next/font/local"
 import "./globals.css"
-import Header from "@/components/header/Header"
-import Logo from "@/components/header/Logo"
-import Navigation from "@/components/header/Navigation"
 import Footer from "@/components/templates/Footer"
+import Header from "@/components/templates/header/Header"
+import Logo from "@/components/templates/header/Logo"
+import Navigation from "@/components/templates/header/Navigation"
 
 export const metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL),
   title: {
     default: "JPHDEVSF | Portfolio Site",
     template: "%s | JPHDEVSF"
@@ -54,11 +55,11 @@ export const metadata = {
     creator: "@yourhandle"
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png"
+    icon: "/favicons/favicon.ico",
+    shortcut: "/favicons/favicon-16x16.png",
+    apple: "/favicons/apple-touch-icon.png"
   },
-  manifest: "/site.webmanifest",
+  manifest: "/favicons/site.webmanifest",
   verification: {
     google: "your-google-site-verification",
     yandex: "your-yandex-verification"
@@ -98,7 +99,7 @@ const brunson = localFont({
   display: "swap"
 })
 
-export default function RootLayout({ children }) {
+const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body
@@ -114,3 +115,5 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
+
+export default RootLayout

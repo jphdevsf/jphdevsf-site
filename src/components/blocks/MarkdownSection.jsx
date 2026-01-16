@@ -4,7 +4,7 @@ import { storyblokEditable } from "@storyblok/react/rsc"
 import ReactMarkdown from "react-markdown"
 import styles from "./MarkdownSection.module.css"
 
-export default function MarkdownSection({ blok }) {
+const MarkdownSection = ({ blok }) => {
   const align = blok.align || "left"
 
   const alignClass =
@@ -25,3 +25,5 @@ export default function MarkdownSection({ blok }) {
     </section>
   )
 }
+
+export default MarkdownSection
