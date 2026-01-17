@@ -7,9 +7,8 @@ export const siteMetadata = {
   description:
     "A modern full-stack portfolio site built with Next.js, Storyblok, and Netlify edge functions",
   keywords: ["portfolio", "web development", "next.js", "storyblok", "netlify", "react"],
-  authors: [{ name: "Jacob" }],
-  creator: "Jacob",
-  publisher: "Jacob",
+  authors: [{ name: "Jacob Hernandez" }],
+  creator: "Jacob Hernandez",
   robots: {
     index: true,
     follow: true,
@@ -24,7 +23,7 @@ export const siteMetadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://jphdevsf-portfolio-site.netlify.app/",
+    url: process.env.NEXT_PUBLIC_SITE_URL,
     siteName: "JPHDEVSF",
     title: "JPHDEVSF | Portfolio Site",
     description:
@@ -38,22 +37,10 @@ export const siteMetadata = {
       }
     ]
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "JPHDEVSF | Portfolio Site",
-    description:
-      "A modern full-stack portfolio site built with Next.js, Storyblok, and Netlify edge functions",
-    images: ["/logo.png"],
-    creator: "@yourhandle"
-  },
   icons: {
     icon: "/favicons/favicon.ico",
     shortcut: "/favicons/favicon-16x16.png",
     apple: "/favicons/apple-touch-icon.png"
   },
-  manifest: "/favicons/site.webmanifest",
-  verification: {
-    google: "your-google-site-verification",
-    yandex: "your-yandex-verification"
-  }
+  manifest: "/favicons/site.webmanifest"
 }
