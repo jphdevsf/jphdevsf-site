@@ -25,7 +25,7 @@ export const dm_sans = DM_Sans({
 export const brunson = localFont({
   src: [
     {
-      path: "../../public/fonts/Brunson.woff2",
+      path: "./../../../public/fonts/Brunson.woff2",
       weight: "400, 500, 600",
       style: "normal"
     }
