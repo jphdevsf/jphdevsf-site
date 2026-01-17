@@ -1,6 +1,7 @@
 import { DM_Mono, DM_Sans, Source_Serif_4 } from "next/font/google"
 import localFont from "next/font/local"
 import "./globals.css"
+import StoryblokProvider from "@/components/StoryblokProvider"
 import Footer from "@/components/templates/Footer"
 import Header from "@/components/templates/header/Header"
 import Logo from "@/components/templates/header/Logo"
@@ -101,18 +102,20 @@ const brunson = localFont({
 
 const RootLayout = ({ children }) => {
   return (
-    <html lang="en">
-      <body
-        className={`${source_serif_4.variable} ${brunson.variable} ${dm_sans.variable} ${dm_mono.variable}`}
-      >
-        <Header>
-          <Logo />
-          <Navigation />
-        </Header>
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <StoryblokProvider>
+      <html lang="en">
+        <body
+          className={`${source_serif_4.variable} ${brunson.variable} ${dm_sans.variable} ${dm_mono.variable}`}
+        >
+          <Header>
+            <Logo />
+            <Navigation />
+          </Header>
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </StoryblokProvider>
   )
 }
 
