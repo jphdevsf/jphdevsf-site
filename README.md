@@ -1,7 +1,7 @@
 
 # jphdevsf-site
 
-Hi there! Here we have a quick POC website demonstrating modern full-stack development using Next.js with Storyblok headless CMS, all deployed to Netlify free-tier and tinkering with Netlify edge functions. [View the site here](https://jphdevsf-portfolio-site.netlify.app/).
+This POC showcases modern full‑stack development using Next.js and the Storyblok headless CMS, deployed on Netlify with its global edge network for fast, cached delivery. [View the site here](https://jphdevsf-portfolio-site.netlify.app/).
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.0-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2-blue?style=for-the-badge&logo=react)](https://react.dev/)
