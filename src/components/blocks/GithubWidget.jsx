@@ -22,6 +22,11 @@ const GithubWidget = async () => {
   if (!res.ok) return <div>Unable to load repos.</div>
 
   const repos = await res.json()
+
+  if (!Array.isArray(repos) || repos.length === 0) {
+    return <div>No public repositories found.</div>
+  }
+
   const {
     owner: { avatar_url }
   } = repos[0]
