@@ -4,11 +4,11 @@ export async function POST(request) {
   try {
     const { path } = await request.json()
 
-    // Check for authorization header to confirm this is a valid request
-    const authHeader = request.headers.get("authorization")
-    if (!authHeader || authHeader !== `Bearer ${process.env.REVALIDATE_SECRET_TOKEN}`) {
-      return Response.json({ message: "Invalid token" }, { status: 401 })
-    }
+    // // Check for authorization header to confirm this is a valid request
+    // const authHeader = request.headers.get("authorization")
+    // if (!authHeader || authHeader !== `Bearer ${process.env.REVALIDATE_SECRET_TOKEN}`) {
+    //   return Response.json({ message: "Invalid token" }, { status: 401 })
+    // }
 
     // Check if path is provided
     if (!path) {
