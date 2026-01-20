@@ -18,7 +18,7 @@ export default async (req: Request, context: Context) => {
     return newResponse
   }
 
-  newResponse.headers.set("cache-control", "public, s-maxage=300")
+  newResponse.headers.set("cache-control", "public, s-maxage=60")
   newResponse.headers.set("x-edge-processed-at", new Date().toISOString())
   return newResponse
 }
