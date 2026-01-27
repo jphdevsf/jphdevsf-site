@@ -13,7 +13,7 @@
     "@netlify/edge-functions": "^3.0.3",
     "@storyblok/react": "^5.4.20",
     "motion": "^12.26.1",
-    "next": "^16.1.1",
+    "next": "^16.1.6",
     "postcss": "^8.5.6",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
