@@ -6,6 +6,8 @@ import Header from "@/components/templates/header/Header"
 import Logo from "@/components/templates/header/Logo"
 import Navigation from "@/components/templates/header/Navigation"
 
+export const dynamic = "force-dynamic"
+
 export { siteMetadata as metadata } from "./seo/metadata"
 
 const RootLayout = ({ children }) => {
