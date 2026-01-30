@@ -20,7 +20,10 @@
       "next": "recommended"
     },
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "correctness": {
+        "noUndeclaredVariables": "error"
+      }
     }
   },
   "javascript": {
