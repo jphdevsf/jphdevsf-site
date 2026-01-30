@@ -35,5 +35,9 @@ export const getStoryblokApi = storyblokInit({
     github_stats: GithubWidget,
     file_download: FileDownload,
     markdown_section: MarkdownSection
+  },
+  bridgeOptions: {
+    resolveRelations: ["feature"],
+    resolveLinks: "url"
   }
 })
