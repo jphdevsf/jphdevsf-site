@@ -3,16 +3,16 @@ import type { Context } from "@netlify/edge-functions"
 export default async (req: Request, context: Context) => {
   if (req.method !== "GET") return
 
-  const url = new URL(req.url)
-  const isStoryblokPreview =
-    url.searchParams.has("_storyblok") ||
-    url.searchParams.has("_storyblok_c") ||
-    url.searchParams.has("_storyblok_tk[token]")
+  const cookie = req.headers.get("cookie") || ""
+
+  const isNextDraftMode =
+    cookie.includes("__prerender_bypass") ||
+    cookie.includes("__next_preview_data")
 
   const response = await context.next()
   const newResponse = new Response(response.body, response)
 
-  if (isStoryblokPreview) {
+  if (isNextDraftMode) {
     newResponse.headers.set("cache-control", "no-store")
     newResponse.headers.set("x-edge-preview-bypass", "true")
     return newResponse
