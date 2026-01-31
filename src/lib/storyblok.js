@@ -12,28 +12,38 @@ import TextLink from "@/components/elements/TextLink"
 import MenuLink from "@/components/templates/header/MenuLink"
 import Page from "@/components/templates/Page"
 
-export const getStoryblokApi = storyblokInit({
-  accessToken: process.env.STORYBLOK_DELIVERY_API_TOKEN,
-  use: [apiPlugin],
-  apiOptions: {
-    region: process.env.STORYBLOK_REGION || "eu",
-    endpoint: process.env.STORYBLOK_API_BASE_URL
-      ? `${new URL(process.env.STORYBLOK_API_BASE_URL).origin}/v2`
-      : undefined
-  },
-  components: {
-    // [Storyblok block name] : [Next.js component]
-    page: Page,
-    feature: Feature,
-    grid: Grid,
-    Card: Card,
-    textbanner: TextBanner,
-    hero: Hero,
-    textgroup: TextGroup,
-    link: TextLink,
-    menu_link: MenuLink,
-    github_stats: GithubWidget,
-    file_download: FileDownload,
-    markdown_section: MarkdownSection
+const components = {
+  // [Storyblok block name] : [Next.js component]
+  page: Page,
+  feature: Feature,
+  grid: Grid,
+  Card: Card,
+  textbanner: TextBanner,
+  hero: Hero,
+  textgroup: TextGroup,
+  link: TextLink,
+  menu_link: MenuLink,
+  github_stats: GithubWidget,
+  file_download: FileDownload,
+  markdown_section: MarkdownSection
+}
+
+let storyblokApi = null
+
+export const getStoryblokApi = () => {
+  if (!storyblokApi) {
+    storyblokApi = storyblokInit({
+      accessToken: process.env.STORYBLOK_DELIVERY_API_TOKEN,
+      use: [apiPlugin],
+      apiOptions: {
+        region: process.env.STORYBLOK_REGION || "eu",
+        endpoint: process.env.STORYBLOK_API_BASE_URL
+          ? `${new URL(process.env.STORYBLOK_API_BASE_URL).origin}/v2`
+          : undefined
+      },
+      components
+    })()
   }
-})
+
+  return storyblokApi
+}
