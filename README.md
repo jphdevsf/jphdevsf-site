@@ -57,9 +57,6 @@ This POC showcases modern full‑stack development using Next.js and the Storybl
 jphdevsf-site/
 ├── src/
 │   ├── app/             
-│   │   ├── api/
-│   │   │   └── revalidate/
-│   │   │       └── route.js
 │   │   ├── favicons/
 │   │   ├── fonts/
 │   │   ├── globals.css  
@@ -96,10 +93,8 @@ jphdevsf-site/
 │       ├── storyblok.js # Storyblok configuration
 │       └── storyblokImageUrl.js
 ├── netlify/
-│   ├── edge-functions/  
-│   │   └── cache-page.ts
-│   └── functions/       
-│       └── revalidate.mjs
+│   └── edge-functions/
+│       └── cache-page.js
 ├── public/              
 │   ├── fonts/
 │   └── image/
@@ -125,11 +120,11 @@ jphdevsf-site/
 This project is configured for Netlify deployment. Simply push to main branch of GitHub repo triggers automatic deployment
 
 
-### Selective Cache clearing (ISR) with Netlify & Storyblok
-- `cache-page.ts` – This Netlify edge function is configured to cache all GET requests to the site for faster load times.
-- `revalidate.js` – This Netlify function is configured to "revalidate" or clear cache of a particular "story" or page slug passed in the json request.
-- In Storyblok dashboard, a webhook is set up to fire the Netlify revalidate function whenever a "story" or page update is published.
-- 
+### Edge Cache with Netlify
+- `cache-page.js` – This Netlify edge function is configured to cache all GET requests to the site for faster load times with a 1-hour cache duration.
+- `layout.js` – Uses `force-dynamic` rendering to bypass Next.js cache while relying on Netlify edge cache for performance.
+- The edge cache handles content delivery automatically without manual revalidation needed.
+-
 ```
 
 ## Configuration Files

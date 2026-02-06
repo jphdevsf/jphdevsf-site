@@ -35,6 +35,7 @@ export default async (req, context) => {
 }
 
 export const config = {
+  cache: "manual",
   path: "/*",
   onError: "bypass"
 }
