@@ -1,10 +1,8 @@
-import type { Context } from "@netlify/edge-functions"
-
-export default async (req: Request, context: Context) => {
+export default async (req, context) => {
   if (req.method !== "GET") return context.next()
   if (req.url.includes("/api/")) return context.next()
-  
-    const url = new URL(req.url)
+
+  const url = new URL(req.url)
   const isStoryblokPreview =
     url.searchParams.has("_storyblok") ||
     url.searchParams.has("_storyblok_c") ||
@@ -13,12 +11,11 @@ export default async (req: Request, context: Context) => {
   const cookie = req.headers.get("cookie") || ""
 
   const isNextDraftMode =
-    cookie.includes("__prerender_bypass") ||
-    cookie.includes("__next_preview_data")
+    cookie.includes("__prerender_bypass") || cookie.includes("__next_preview_data")
 
   const response = await context.next()
   const newResponse = response.clone()
-  
+
   const contentType = newResponse.headers.get("content-type") || ""
 
   // Never cache RSC, JSON, API, assets
@@ -32,7 +29,7 @@ export default async (req: Request, context: Context) => {
     return newResponse
   }
 
-  newResponse.headers.set("cache-control", "public, s-maxage=60")
+  newResponse.headers.set("cache-control", "public, s-maxage=3600")
   newResponse.headers.set("x-edge-processed-at", new Date().toISOString())
   return newResponse
 }
