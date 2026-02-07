@@ -1,11 +1,13 @@
-import { draftMode } from "next/headers"
+// import { draftMode } from "next/headers"
+
+import { isVisualEditor } from "@storyblok/react"
 import { getStoryblokApi } from "@/lib/storyblok"
 
 const getStoryBlokData = async (url, options = {}) => {
-  const { isEnabled } = await draftMode()
-
+  // const { isEnabled } = await draftMode()
+  const isInEditor = isVisualEditor()
   const apiOptions = {
-    version: isEnabled ? "draft" : "published",
+    version: isInEditor ? "draft" : "published",
     ...options
   }
 
